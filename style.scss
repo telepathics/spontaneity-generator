@@ -1,0 +1,209 @@
+// rgb(24, 24, 25)
+$eerie_black: #181819;
+
+// rgb(20, 18, 04)
+$dark_sienna: #2a0800;
+
+// rgb(94, 94, 94)
+$davys_grey: #5e5e5e;
+
+// rgb(222, 212, 202)
+$pearl_brush: #ded4ca;
+
+// rgb(247, 232, 221)
+$linen: #f7e8dd;
+
+// rgb(254, 216, 119)
+$snap_dragon: #fed877;
+
+// rgb(172, 93, 77)
+$redwood: #ac5d4d;
+
+// rgb(176, 141, 159)
+$english_lavender: #b08d9f;
+
+// rgb(86, 107, 138)
+$queen_blue: #566b8a;
+
+/* generated via eva design system
+  @link https://colors.eva.design
+*/
+$success: #84c415;
+$info: #02adcc;
+$warning: #ffb31c;
+$danger: #ff7354;
+
+$mono: "Inconsolata", monospace;
+$heading: "Playfair Display", serif;
+$text: "Barlow Condensed", Arial, sans-serif;
+
+@mixin highlighter {
+  padding: 0 2px;
+  color: $dark_sienna;
+  background: linear-gradient(
+    to left,
+    rgba(254, 216, 119, 0.3) 0%,
+    rgba(254, 216, 119, 0.4) 60%,
+    rgba(254, 216, 119, 0.4) 60%,
+    rgba(254, 216, 119, 0.6) 85%,
+    rgba(254, 216, 119, 0.8) 100%
+  );
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $dark_sienna;
+}
+
+html {
+  background-color: $redwood;
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    section {
+      padding: 30px;
+      width: 600px;
+      max-width: 600px;
+      text-align: center;
+      background-color: $pearl_brush;
+      border: 4px solid $dark_sienna;
+      h1 {
+        font-family: $heading;
+        font-size: 16px;
+        color: $redwood;
+        line-height: 1;
+      }
+      #icon {
+        width: 100px;
+        height: 100px;
+      }
+      #idea {
+        padding: 15px;
+        height: 120px;
+        font-family: $text;
+        font-size: 26px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+        input {
+          padding: 10px;
+          width: calc(100% - 36px);
+          height: 40px;
+          border: 1px solid #ac5d4d;
+          border-radius: 5px;
+        }
+        button {
+          min-width: 0;
+          margin-left: 16px;
+        }
+        #submitted {
+          font-family: $mono;
+          font-size: 14px;
+        }
+      }
+      .action-buttons {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+      button {
+        // reset
+        background-image: none;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        padding: 0;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+        // styling
+        font-family: $mono;
+        font-size: 13px;
+        border: $redwood;
+        padding: 5px 10px;
+        margin: 5px;
+        min-width: 175px;
+        color: $redwood;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid $redwood;
+        position: relative;
+        transition: 0.6s all;
+        background-color: transparent;
+        border-radius: 10px;
+
+        &.isFilled {
+          background-color: $snap_dragon;
+          &:hover span {
+            text-decoration: underline;
+          }
+        }
+
+        // button css by https://codepen.io/linh-quang-inh/pen/GemGXw
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          opacity: 1;
+          transition: 0.5s all;
+          transform: scale(0.1);
+          border-radius: 10px;
+        }
+        &:hover:after {
+          background-color: $snap_dragon;
+          transform: scale(1.3);
+          opacity: 0;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: $snap_dragon;
+          cursor: pointer;
+        }
+
+        span {
+          @include highlighter;
+          padding: 5px 7px;
+          color: $dark_sienna;
+        }
+      }
+    }
+    footer {
+      padding: 15px 0;
+      a {
+        text-decoration: none;
+        &:hover i {
+          color: $dark_sienna;
+        }
+      }
+      i {
+        padding: 0 5px;
+        color: $pearl_brush;
+        font-size: 25px;
+        transition: ease-in-out 0.2s;
+      }
+    }
+  }
+}
