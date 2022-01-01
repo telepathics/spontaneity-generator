@@ -6,16 +6,18 @@ let ideaList = [];
 
 const generateIdea = () => {
   let randomIdea = "";
-  ideaLoc.innerHTML = `<img src="/assets/loading.gif" alt="loading...">`;
+  ideaLoc.innerHTML = `<img src="./assets/loading.gif" alt="loading...">`;
 
   if (localStorage.getItem(LOCAL_STORAGE_IDEAS)) {
     const localStorageIdeas = JSON.parse(
       localStorage.getItem(LOCAL_STORAGE_IDEAS)
     );
     ideaList = localStorageIdeas.ideaList;
-    const now = new Date().getTime();
+    randomIdea = ideaList[Math.floor(Math.random() * ideaList.length)];
+    ideaLoc.innerText = randomIdea;
 
     // if localstorageideas.timestamp is older than 30 days, fetch new ideas
+    const now = new Date().getTime();
     if (
       localStorageIdeas.timestamp &&
       now - localStorageIdeas.timestamp > 30 * 24 * 60 * 60 * 1000
@@ -34,11 +36,12 @@ const generateIdea = () => {
           JSON.stringify({ ideaList: data, timestamp: new Date().getTime() })
         );
         ideaList = data;
+        randomIdea = ideaList[Math.floor(Math.random() * ideaList.length)];
+        ideaLoc.innerText = randomIdea;
       });
   }
 
   randomIdea = ideaList[Math.floor(Math.random() * ideaList.length)];
-  ideaLoc.innerText = randomIdea;
 };
 
 const submitIdea = () => {
@@ -47,7 +50,7 @@ const submitIdea = () => {
   const ideaInput = document.getElementById("idea-input");
   const ideaSubmit = document.getElementById("idea-submit");
   ideaSubmit.addEventListener("click", function () {
-    ideaLoc.innerHTML = `<img src="/assets/loading.gif" alt="loading...">`;
+    ideaLoc.innerHTML = `<img src="./assets/loading.gif" alt="loading...">`;
     fetch(`${apiUrl}/db/ideas/new`, {
       method: "PATCH",
       headers: {
