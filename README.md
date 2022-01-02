@@ -5,6 +5,10 @@
 just a fun little spontaneity generator. feel free to add your own ideas.
 
 ## open api
-server is run on heroku and calls to notion.
-* `GET /db/ideas/all` - retrieve all (vetted) ideas
+server is run on heroku and calls to notion. cache your requests!
+* `GET /db/ideas/all` - retrieve all vetted ideas
+* `GET /db/ideas/random` - retrieve one (1) random vetted idea
 * `PATCH /db/ideas/new` - submit an idea
+
+## etc
+shout out to Xhera for creating a [widgetable version for IOS](https://github.com/xheraa/trysomethingnewwidget) w/ Scriptable!
