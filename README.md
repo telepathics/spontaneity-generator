@@ -10,5 +10,8 @@ server is run on heroku and calls to notion. cache your requests!
 * `GET /db/ideas/random` - retrieve one (1) random vetted idea
 * `PATCH /db/ideas/new` - submit an idea
 
-## etc
-shout out to Xhera for creating a [widgetable version for IOS](https://github.com/xheraa/trysomethingnewwidget) w/ Scriptable!
+## FUN EXTENSIONS 
+* Xhera created a [widgetable version for IOS](https://github.com/xheraa/trysomethingnewwidget) w/ Scriptable!
+* James made an [rss feed wrapper](https://github.com/capjamesg/spontaneity-rss) !!
+
+thank you!! have a nice day!
